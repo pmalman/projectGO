@@ -1,0 +1,20 @@
+language: go
+sudo: false
+
+#go actualmente tiene la versión estable 1.13.1 y da soporte hasta a dos versiones "major" anteriores (1.11 en este caso)
+#master es la última versión de go en desarrollo
+#Con estas líneas probamos las versiones más usadas
+go:
+- "1.11"
+- "1.11.13"
+- "1.12.10" 
+- "1.13.1"
+
+#Se añaden cadenas de texto cifradas con las variables de entorno para poder iniciar sesion en Instagram
+env:
+- secure: XyUZf5yMxvoRjs8gdBMzXV3GM3anMIylfpTVsLhtlGuOVGznYmtu1ZIcXFAkP4uikoLF6eyvG83SSakbKkwA5kNAaYXL3DogjP8H4kwJ0HF5TiAke/xZJWAn9MKYYXw0PYgRIgGqBX2/eHf1pfrr1IR6cSTdByVZmOjXmFYpgsdG93yOGHBJoe3CXJ8RjRaqyVI1Bp8g0qWUuIKvTRCsIMFdYvqgqKylJozU2kP/xdmYPC2sFmC6ViATXMEVsjcwT9VA5VjWfB5GPXWsBznY9zMxYXMsb4REMsK2wyeTOgyl2UILGPtFEoBJrsUX78z4BOl9eQYm81TaxsgNV4iuzA==
+
+#Ejecución del test
+#./... ejecuta todos los tests del directorio de test. Es útil por si se meten más archivos de tests en el futuro
+script:
+- make test
